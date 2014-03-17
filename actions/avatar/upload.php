@@ -27,7 +27,7 @@ if ($html5) {
 	
 	if (!$img_data){
 		register_error(elgg_echo("avatar:upload:fail"));
-		forward(REFERRER);
+		forward(REFERER);
 	}
 } elseif ($url) {
 	$url = elgg_normalize_url($url);
@@ -65,7 +65,7 @@ if ($img_data) {
 	$filehandler->open("write");
 	if (!$filehandler->write($img_data)) {
 		register_error(elgg_echo("avatar:upload:fail"));
-		forward(REFERRER);
+		forward(REFERER);
 	}
 	$filename = $filehandler->getFilenameOnFilestore();
 	$filehandler->close();
